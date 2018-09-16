@@ -1,0 +1,27 @@
+
+body {
+    background-image: url("../img/free-burger-vector.jpg");
+}
+
+h1 {
+    color:black;
+}
+
+h3 {
+    color: black;
+}
+
+li {
+    color:black;
+}
+
+.jumbotron {
+    background-color: #fdcc05;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 17%;
+}
