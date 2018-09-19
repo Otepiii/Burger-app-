@@ -9,23 +9,28 @@ var orm = {
     },
 
     insertOne: function (burger_name, callback) {
-        connection.query("INSERT INTO burgers ? SET ?", [{
-            burger_name: burger_name,
-            devoured: false
-        }], function (error, res) {
+        console.log("string",burger_name);
+
+        connection.query("INSERT INTO burgers (burger_name, devoured) VALUES (?),(?)", [
+            {burger_name},
+            {devoured:0}
+        ], function (error, res) {
             if (error) throw error;
             callback(res);
         });
     },
 
-    updateOne: function (id, callback) {
-        connection.query("UPDATE burgers SET ? WHERE?", [
-            { devoured: true }, { id: id }],
+    updateOne: function (id, devoured, callback) {
+        var newBool = devoured == true ? false : true;
+        console.log(newBool);
+        connection.query("UPDATE burgers SET ? WHERE ?", [
+            { devoured: newBool}, { id: id }],
             function (error, res) {
                 if (error) throw error;
                 callback(res);
             })
     }
+
 
 }
 

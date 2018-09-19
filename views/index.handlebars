@@ -16,10 +16,7 @@
                     {{#unless this.devoured}}
                     <li class="list-group-item">
                         {{this.id}}. {{this.burger_name}}
-                        <form action="/{{this.id}}?_method=PUT" method="POST">
-                            <input type="hidden" name="devoured" value="false">
-                            <button type="submit" class="btn btn-primary">Devoured</button>
-                        </form>
+                            <button type="button" class="btn btn-primary burger-button" devoured={{this.devoured}} value={{this.id}} >Devour</button>
                     </li>
                     {{/unless}}
                 {{/each}}    
@@ -34,6 +31,7 @@
                 {{#if this.devoured}}
                     <li class="list-group-item">
                         {{this.id}}. {{this.burger_name}}
+                         <button type="button" class="btn btn-primary burger-button" devoured={{this.devoured}} value={{this.id}}>Vomit</button>
                     </li>
                 {{/if}}
             {{/each}}        
@@ -45,13 +43,11 @@
 <div class="row">
     <div class="col-md-6 add-burger">
         <h3>Add a Burger</h3>
-        <form class="create-update-form" action="/" method="POST">
         
-            <div class="form-group">
+            
                 <p><input type="text" id="burger" name="burger_name"></p>
-            </div>
 
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+
+            <button type="submit" class="btn btn-primary add-burger">Submit</button>
     </div>
 </div>

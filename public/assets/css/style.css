@@ -17,6 +17,11 @@ li {
 
 .jumbotron {
     background-color: #fdcc05;
+    margin: 40px;
+}
+
+.row {
+    margin: 20px;
 }
 
 img {
